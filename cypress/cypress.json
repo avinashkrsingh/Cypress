@@ -1,0 +1,9 @@
+{
+  "baseUrl": "https://www.transamerica.com",
+  "watchForFileChanges": false,
+  "defaultCommandTimeout": 10000,
+  "projectId": "5bs9t2",
+  "waitForAnimations": false,
+  "animationDistanceThreshold": 50,
+  "chromeWebSecurity": false 
+}
