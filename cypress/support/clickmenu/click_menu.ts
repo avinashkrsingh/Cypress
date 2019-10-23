@@ -1,5 +1,6 @@
 import * as Fppage from '../../pageObjects/Footer.page';
 import * as Fdpage from '../../pageObjects/Header.page';
+import * as Hepage from '../../pageObjects/Header.page';
 
 export function ClickLink(linkName: string, Url?: string): void {
     cy.get(Fppage.FooterLinks).contains(linkName).invoke('removeAttr', 'target').click();
@@ -93,11 +94,22 @@ cy.get(Fppage.mainmenuSubmenu3).then(submenu => {
   
 }
 })
+   
 
 
-  
-  }
-      
+}
+
+export function login(): void{
+  Cypress.on('uncaught:exception', (err, runnable) => {
+         
+      return false
+    })
+
+  cy.get(Hepage.Login).click({ force: true, });
+  cy.get(Hepage.menulogin).contains('Individual').click( {force: true,} )
+  .click( {force: true,} ).get(Hepage.nextbutton).click( {force: true,} )
+  .get(Hepage.menusubmenu).contains('Mutual Funds').click( {force: true,} )
+  .get(Hepage.nextbutton).click( {force: true,} ).invoke('removeAttr', 'target')
   
 
 
@@ -105,7 +117,29 @@ cy.get(Fppage.mainmenuSubmenu3).then(submenu => {
  
 
         
+  }
 
+  export function searchbox(): void{
+    Cypress.on('uncaught:exception', (err, runnable) => {
+           
+        return false
+      })
+  
+    cy.get(Hepage.serachbox).click({ force: true, });
+    cy.get(Hepage.searchinput).type('transamerica').type('{enter}') ;
+    cy
+  .get(Hepage.searchnextbutton)
+  .each(($el, index, $list) => {
+    
+    if ($el.should('be.visible')) {
+      
+      cy.wrap($el).click()
+    } else {
+      
+    }
+  })
+          
+    }
 
 
    

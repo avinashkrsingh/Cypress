@@ -1,7 +1,7 @@
 import * as Fppage from '../../pageObjects/Footer.page';
 import * as Fdpage from '../../pageObjects/Header.page';
 
-import { clickmenu } from '../../support/clickmenu/click_menu';
+import { clickmenu,login,searchbox } from '../../support/clickmenu/click_menu';
 
 // import ' cypress/support/index.js';
 
@@ -71,10 +71,17 @@ it('Verify Footer Dropdown', () => {
 })
 
 
-it.only('Verify menu  Links for Indiviual, Finicial Professional and Employer ', () => {
-   clickmenu();
-//    cy.xpath('//div[1]/div/div/div[2]/div[1]/div/div//li').click({ multiple: true, force: true, });
+it.only('Login Functionality ', () => {
+
+login();
+searchbox();
 })
+
+it.only('Search box Functionality ', () => {
+
+    searchbox();
+    })
+
 
 
         

@@ -23,8 +23,10 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
-import { ClickLink , ClickLinknewtab,clickmenu }  from '../support/clickmenu/click_menu';
+import { ClickLink , ClickLinknewtab,clickmenu,login,searchbox }  from '../support/clickmenu/click_menu';
 
 Cypress.Commands.add('ClickLink', ClickLink);
 Cypress.Commands.add('ClickLinknewtab', ClickLinknewtab);
 Cypress.Commands.add('clickmenu', clickmenu);
+Cypress.Commands.add('login', login);
+Cypress.Commands.add('searchbox',searchbox);
