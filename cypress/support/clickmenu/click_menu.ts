@@ -141,5 +141,33 @@ export function login(): void{
           
     }
 
+    export function contactus(): void{
+      Cypress.on('uncaught:exception', (err, runnable) => {
+             
+          return false
+        })
+
+        cy.get(Hepage.individualsubmenu).contains('Support').click()
+        cy.get(Hepage.contactus).contains('Contact Us').click();
+        cy.get(Hepage.contactussubmenu).contains('Individual').click().click()
+        .get(Hepage.telluswhoweare).should('have.class', 'stepper__step stepper__step--active').contains('Tell us who you are')
+        .get(Hepage.nextbutton).click()
+        .get(Hepage.accounttypedropdown).click()
+        .get(Hepage.accountmenu).contains('Insurance').click()
+        .get(Hepage.reasonforcontract).click().get(Hepage.reasonmenu).contains('Get a quote').click()
+        .get(Hepage.telluswhoweare).should('have.class', 'stepper__step stepper__step--active').contains('Reason for contact')
+        .get(Hepage.nextbutton).click()
+        .get(Hepage.firstName).type('Satis')
+        .get(Hepage.lastName).type('Satis')
+        .get(Hepage.country).click()
+        .get(Hepage.countrymenu).contains('Nepal').click()
+        .get(Hepage.city).click()
+        .get(Hepage.lastName).type('Satis')
+        .get(Hepage.email).type('Satis')
+        .get(Hepage.AccountNumber).type('Satis')
+        .get(Hepage.phonenumber).type('Satis')
+        .get(Hepage.Message).type('Satis')
+      }
+    
 
    

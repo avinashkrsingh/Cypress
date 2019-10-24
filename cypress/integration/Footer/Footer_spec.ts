@@ -1,7 +1,7 @@
 import * as Fppage from '../../pageObjects/Footer.page';
 import * as Fdpage from '../../pageObjects/Header.page';
 
-import { clickmenu,login,searchbox } from '../../support/clickmenu/click_menu';
+import { clickmenu,login,searchbox,contactus } from '../../support/clickmenu/click_menu';
 
 // import ' cypress/support/index.js';
 
@@ -71,15 +71,15 @@ it('Verify Footer Dropdown', () => {
 })
 
 
-it.only('Login Functionality ', () => {
+// it.only('Login Functionality ', () => {
 
-login();
-searchbox();
-})
+// login();
+// searchbox();
+// })
 
 it.only('Search box Functionality ', () => {
 
-    searchbox();
+    contactus();
     })
 
 
