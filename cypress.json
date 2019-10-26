@@ -1,0 +1,18 @@
+{
+  "baseUrl": "https://www.transamerica.com",
+  "watchForFileChanges": false,
+  "defaultCommandTimeout": 10000,
+  "projectId": "5bs9t2",
+  "waitForAnimations": false,
+  "animationDistanceThreshold": 50,
+  "chromeWebSecurity": false ,
+  
+    "viewportWidth": 1000,
+    "viewportHeight": 1000,
+    
+    "reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+        "configFile": "reporterOptions.json"
+    }
+  
+}

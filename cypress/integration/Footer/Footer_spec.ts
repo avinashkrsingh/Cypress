@@ -71,16 +71,16 @@ it('Verify Footer Dropdown', () => {
 })
 
 
-// it.only('Login Functionality ', () => {
+it.only('Login Functionality ', () => {
 
-// login();
-// searchbox();
-// })
+//login();
+searchbox();
+})
 
-it.only('Search box Functionality ', () => {
+// it.only('Search box Functionality ', () => {
 
-    contactus();
-    })
+//     contactus();
+//     })
 
 
 
