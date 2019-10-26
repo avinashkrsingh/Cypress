@@ -127,16 +127,19 @@ export function login(): void{
   
     cy.get(Hepage.serachbox).click({ force: true, });
     cy.get(Hepage.searchinput).type('transamerica').type('{enter}') ;
-    cy
-  .get(Hepage.searchnextbutton)
-  .each(($el, index, $list) => {
+   cy.get('body > div.container.search-results > div').then(submenu => { 
+    var SubmenuCount:number = Cypress.$(submenu).length;
+  
+    for (var i:number = 0; i < 20; i++) {
+   if(cy.get('div.container.search-results > ul > li.page-navigator-page-next > a').contains('Next')) {
     
-    if ($el.should('be.visible')) {
-      
-      cy.wrap($el).click()
-    } else {
-      
+    
+    cy.get('div.container.search-results > ul > li.page-navigator-page-next > a').click({multiple: true, force: true, }).wait(200)
+  
+          
     }
+    
+  }
   })
           
     }
